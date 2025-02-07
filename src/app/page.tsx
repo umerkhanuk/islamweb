@@ -1,4 +1,6 @@
 "use client"
+/* eslint-disable react/no-unescaped-entities */
+
 import Head from 'next/head';
 import { useState } from 'react';
 import CityEvents from './component/CityEvents';
@@ -35,7 +37,7 @@ export default function Home() {
 
       <section className="h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/makkah.jpg')" }}>
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold">"Indeed, in the remembrance of Allah do hearts find rest" <span className="text-green-500">(Quran 13:28)</span></h1>
+          <h1 className="text-4xl md:text-6xl font-bold">&quot;Indeed, in the remembrance of Allah do hearts find rest&quot; <span className="text-green-500">(Quran 13:28)</span></h1>
         </div>
       </section>
 
