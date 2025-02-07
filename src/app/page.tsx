@@ -1,7 +1,6 @@
 "use client"
 import Head from 'next/head';
 import { useState } from 'react';
-import Link from 'next/link'; // Import Link from next.js
 import CityEvents from './component/CityEvents';
 
 export default function Home() {
