@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
