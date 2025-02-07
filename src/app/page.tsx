@@ -1,100 +1,71 @@
-import Image from "next/image";
+"use client"
+import Head from 'next/head';
+import { useState } from 'react';
+import Link from 'next/link'; // Import Link from next.js
+import CityEvents from './component/CityEvents';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [selectedCity, setSelectedCity] = useState<'makkah' | 'madina'>('makkah'); 
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const makkahEvents = [
+    { id: 'makkah-event-1', title: 'The Birth of Prophet Muhammad (PBUH)', date: '570 CE' },
+    { id: 'makkah-event-2', title: 'The First Revelation', date: '610 CE' },
+    { id: 'makkah-event-3', title: 'The Hijra to Madina', date: '622 CE' },
+
+  ];
+
+  const madinaEvents = [
+    { id: 'madina-event-1', title: 'The Treaty of Hudaybiyyah', date: '628 CE' },
+    { id: 'madina-event-2', title: 'The Battle of Uhud', date: '625 CE' },
+    { id: 'madina-event-3', title: 'The Farewell Pilgrimage', date: '632 CE' },
+    { id: 'madina-event-4', title: 'The Battle of Badr', date: '624 CE' },
+
+    // Add more events as needed
+  ];
+
+  const toggleCity = (city: 'makkah' | 'madina') => {
+    setSelectedCity(city);
+  };
+
+  return (
+    <div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+      <Head>
+        <title>Islamic Web - Stay Connected with Deen</title>
+        <meta name="description" content="Daily Quran, Hadith, and Prayer Times" />
+      </Head>
+
+      <section className="h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/makkah.jpg')" }}>
+        <div className="text-center">
+          <h1 className="text-4xl md:text-6xl font-bold">"Indeed, in the remembrance of Allah do hearts find rest" <span className="text-green-500">(Quran 13:28)</span></h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <section className="py-10 text-center">
+        <h2 className="text-3xl font-semibold">Significant Events</h2>
+        <div className="mt-6">
+          <button
+            onClick={() => toggleCity('makkah')}
+            className={`px-4 py-2 mr-4 ${selectedCity === 'makkah' ? 'bg-green-500 text-white' : 'bg-gray-200'}`}
+          >
+            Makkah
+          </button>
+          <button
+            onClick={() => toggleCity('madina')}
+            className={`px-4 py-2 ${selectedCity === 'madina' ? 'bg-green-500 text-white' : 'bg-gray-200'}`}
+          >
+            Madina
+          </button>
+        </div>
+
+        <CityEvents 
+          selectedCity={selectedCity} 
+          makkahEvents={makkahEvents} 
+          madinaEvents={madinaEvents} 
+        />
+      </section>
+
+      <footer className="py-6 text-center bg-gray-800 text-white">
+        <p>&copy; 2025 Islamic Web. All rights reserved.</p>
       </footer>
     </div>
   );

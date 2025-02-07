@@ -1,0 +1,38 @@
+{
+    "makkah-event-1": {
+      "title": "The Birth of Prophet Muhammad (PBUH)",
+      "description": "This event marks the birth of Prophet Muhammad (PBUH) in Makkah.",
+      "date": "570 CE",
+      "location": "Makkah",
+      "image": "/images/makkah-event-1.jpg"
+    },
+    "makkah-event-2": {
+      "title": "The Construction of Kaaba",
+      "description": "A historical moment when Prophet Ibrahim and his son Ismail rebuilt the Kaaba.",
+      "date": "Ancient Era",
+      "location": "Makkah",
+      "image": "/images/makkah-event-2.jpg"
+    },
+    "madina-event-1": {
+      "title": "The Treaty of Hudaybiyyah",
+      "description": "The Treaty of Hudaybiyyah was a pivotal moment in Islamic history that occurred in Madina.",
+      "date": "628 CE",
+      "location": "Madina",
+      "image": "/images/madina-event-1.jpg"
+    },
+    "makkah-event-3": {
+      "title": "The Conquest of Makkah",
+      "description": "The Conquest of Makkah was a significant moment in Islamic history.",
+      "date": "630 CE",
+      "location": "Makkah",
+      "image": "/images/makkah-event-4.jpg"
+    },
+    "madina-event-4": {
+      "title": "The Battle of Badr",
+      "description": "The Battle of Badr was a key event in the early days of Islam.",
+      "date": "624 CE",
+      "location": "Madina",
+      "image": "/images/madina-event-4.jpg"
+    }
+  }
+  
